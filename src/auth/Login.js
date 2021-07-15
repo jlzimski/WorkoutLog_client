@@ -8,7 +8,7 @@ const Login = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         // console.log(username, password);
-        fetch('http://localhost:3000/user/login', {
+        fetch(`http://localhost:3000/user/login`, {
             method: 'POST',
             body: JSON.stringify({user:{username: username, passwordhash: passwordhash}}),
             headers: new Headers({
@@ -17,7 +17,7 @@ const Login = (props) => {
         }).then(
             (response) => response.json()
         ).then((data) => {
-            props.updateToken(data.sessionToken)
+            props.updateToken(data.sessionToken);
         })
     }
 

@@ -7,7 +7,7 @@ const Signup = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        // console.log(username, passwordhash);
+        console.log(username, passwordhash);
         fetch("http://localhost:3000/user/register", {
             method: 'POST',
             body: JSON.stringify({user:{username: username, passwordhash: passwordhash}}),
